@@ -714,7 +714,8 @@ function start() {
 rig.complete ? start() : rig.addEventListener('load', start, { once: true });
 
 /* ---- Photos: the hero loads first, then everything else before anyone scrolls to it ---- */
-addEventListener('load', () => $$('[loading=lazy]').forEach(i => i.loading = 'eager'));
+const eager = () => $$('[loading=lazy]').forEach(i => i.loading = 'eager');
+rig.complete ? eager() : rig.addEventListener('load', eager); addEventListener('load', eager);
 
 /* ---- Equipment: advances on its own until someone takes over ---- */
 const tabs = $$('.spots [role=tab]'), where = $('.where'), units = $('.units');
