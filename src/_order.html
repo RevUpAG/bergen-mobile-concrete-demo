@@ -1,0 +1,75 @@
+<section class="sec dark" id="quote" aria-labelledby="h-q" data-nodock>
+  <div class="wrap">
+    <h2 id="h-q">{{h2}}</h2>
+    <p class="lede">{{lede}}</p>
+    <form class="quote" id="form" novalidate>
+      <div>
+        <fieldset>
+          <legend>What are you pouring?</legend>
+          <div class="seg">
+            <label><input type="radio" name="kind" value="slab"><span>Slab</span></label>
+            <label><input type="radio" name="kind" value="foot"><span>Footing or wall</span></label>
+            <label><input type="radio" name="kind" value="col"><span>Round columns</span></label>
+            <label><input type="radio" name="kind" value="yd"><span>I know my yards</span></label>
+          </div>
+          <div class="dims" data-for="slab">
+            <label class="f"><span>Length, ft</span><input id="sl" inputmode="decimal" value="16" autocomplete="off"></label>
+            <label class="f"><span>Width, ft</span><input id="sw" inputmode="decimal" value="12" autocomplete="off"></label>
+            <label class="f"><span>Thick, in</span><input id="st" inputmode="decimal" value="4" autocomplete="off"></label>
+          </div>
+          <div class="dims" data-for="foot" hidden>
+            <label class="f"><span>Length, ft</span><input id="fl" inputmode="decimal" value="60" autocomplete="off"></label>
+            <label class="f"><span>Width, in</span><input id="fw" inputmode="decimal" value="16" autocomplete="off"></label>
+            <label class="f"><span>Depth, in</span><input id="fd" inputmode="decimal" value="10" autocomplete="off"></label>
+          </div>
+          <div class="dims" data-for="col" hidden>
+            <label class="f"><span>Across, in</span><input id="cd" inputmode="decimal" value="12" autocomplete="off"></label>
+            <label class="f"><span>Tall, ft</span><input id="ch" inputmode="decimal" value="4" autocomplete="off"></label>
+            <label class="f"><span>How many</span><input id="cn" inputmode="numeric" value="8" autocomplete="off"></label>
+          </div>
+          <div class="dims" data-for="yd" hidden>
+            <div class="f yd"><span id="l-yy">Cubic yards</span><div class="step"><button type="button" data-q="-1" aria-label="A quarter yard less">−</button><input id="yy" inputmode="decimal" value="8" autocomplete="off" aria-labelledby="l-yy" aria-describedby="h-yy"><button type="button" data-q="1" aria-label="A quarter yard more">+</button></div><small id="h-yy">We sell in quarter yards, like 8, 8¼, 8½ or 8¾.</small></div>
+          </div>
+          <div class="chips" aria-label="Common sizes" data-for="slab">
+            <button type="button" data-p="16,12,4" data-w="Patio">Patio 12 × 16</button><button type="button" data-p="24,18,5" data-w="Driveway">Driveway 18 × 24</button><button type="button" data-p="30,3,4" data-w="Walkway">Walkway 3 × 30</button><button type="button" data-p="22,20,5" data-w="Garage slab">Garage 20 × 22</button>
+          </div>
+          <p class="live" aria-live="polite"><b id="live"></b><span id="live-u">yards, estimated</span></p>
+        </fieldset>
+        <fieldset>
+          <legend>Where does it go?</legend>
+          <div class="seg{{v5}}">
+            {{vias}}
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>About the job <small>(all optional)</small></legend>
+          <div class="two">
+            <label class="f"><span>Town</span><input id="t" autocomplete="address-level2"></label>
+            <label class="f"><span>Pour day</span><input id="d" type="date"></label>
+            <label class="f"><span>What’s it for?</span><input id="w" placeholder="Footing, patio, driveway…" autocomplete="off"></label>
+            <label class="f"><span>Your name</span><input id="n" autocomplete="name"></label>
+            <label class="f full"><span>Mix, access or other notes</span><textarea id="m" rows="2"></textarea></label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="ticket">
+        <div class="tk"><h3>Your pour</h3><img src="{{root}}img/logo.webp" width="820" height="600" alt=""></div>
+        <svg class="shape" id="shape" viewBox="0 0 320 170" role="img" aria-label="Drawing of your pour"></svg>
+        <p class="est">Estimated yardage</p>
+        <div class="meter" id="qm" aria-hidden="true"></div>
+        <p class="also" id="also"></p>
+        <dl>
+          <div><dt>Job</dt><dd id="k-job"></dd></div>
+          <div><dt>Equipment</dt><dd id="k-via"></dd></div>
+          <div><dt>Town</dt><dd id="k-town"></dd></div>
+          <div><dt>Day</dt><dd id="k-day"></dd></div>
+        </dl>
+        <p class="msgh" id="l-msg">Your text to dispatch</p>
+        <p class="msg" id="msg" aria-labelledby="l-msg"></p>
+        <div class="acts"><a class="btn" href="tel:+12017977550"><svg aria-hidden="true"><use href="#tel"/></svg>Call dispatch to order</a><a class="btn line" id="text-it" href="sms:+12017977550"><svg aria-hidden="true"><use href="#sms"/></svg>Text my pour details</a></div>
+        <p class="fine">Dispatch confirms pricing, equipment and scheduling directly. The text goes to 201-797-7550, and you can edit it before you send it.</p>
+        <p class="desk">On a computer? <button type="button" id="copy">Copy the text</button> and send it from your phone.</p>
+      </div>
+    </form>
+  </div>
+</section>
